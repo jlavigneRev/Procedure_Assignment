@@ -1,0 +1,47 @@
+Procedures Assignment
+getall, getbyid, update, insert, delete
+
+1. getAll
+
+DELIMITER //
+create procedure getAllTransaction()
+BEGIN
+	select * from transaction;
+END //
+DELIMITER ;
+
+2. getById
+
+DELIMITER //
+create procedure getEmployeeById(IN var1 INTEGER)
+BEGIN
+	SELECT * FROM employee WHERE id = var1;
+END //
+DELIMITER ;
+
+3. update
+
+DELIMITER //
+create procedure updateEmployeeUsername(IN var1 INTEGER, IN var2 char(30))
+BEGIN
+	UPDATE employee SET username = var2 WHERE id = var1;
+END //
+DELIMITER ;
+
+4. insert
+
+DELIMITER //
+create procedure insertEmployee(IN var1 CHAR(30), IN var2 CHAR(60), IN var3 CHAR(50))
+BEGIN
+	INSERT INTO employee (username, password, name) VALUES (var1, var2, var3);
+END //
+DELIMITER ;
+
+5. delete
+
+DELIMITER //
+create procedure deleteEmployee(IN var1 INTEGER)
+BEGIN
+	DELETE FROM employee WHERE id = var1;
+END //
+DELIMITER ;
